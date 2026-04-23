@@ -32,7 +32,7 @@ export const projects: Project[] = [
     solution: 'Full-stack web app with 9 AI modules: smart study planner, 24/7 AI tutor, NEET-pattern mock test generator, photo doubt solver (upload any question image), weak area analyzer, and performance dashboard.',
     impact: 'Complete NEET prep platform across Physics, Chemistry & Biology. Powered by Claude Sonnet for 8 modules and GPT-4o Vision for image-based doubts.',
     tags: ['React', 'Node.js', 'Claude API', 'GPT-4o Vision', 'PostgreSQL', 'Supabase', 'Redis'],
-    link: '#',
+    link: 'https://github.com/nihilkaarthikeyan-tech/NEET-Ai-agent',
     type: 'ai',
     status: 'completed',
   },
