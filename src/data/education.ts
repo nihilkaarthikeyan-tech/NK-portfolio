@@ -29,6 +29,13 @@ export const experience = [
   },
   {
     type: "Internship",
+    title: "Web Developer Intern",
+    company: "Zidio Development (Remote)",
+    date: "Aug 2025 – Nov 2025",
+    description: "Worked on full-stack web projects using React, Node.js, and MongoDB to build scalable and user-friendly applications. Developed key features including user authentication, dashboards, and dynamic data handling."
+  },
+  {
+    type: "Internship",
     company: "MindBox LLC",
     date: "June 2025",
     description: "Completed my internship in Full Stack Development, gaining hands-on experience in modern web technologies, frontend and backend development, and building complete web applications."
