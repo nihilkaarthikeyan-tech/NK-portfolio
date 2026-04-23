@@ -6,32 +6,24 @@ const SERVICES = [
     title: 'Web Development',
     description: 'Full-stack web applications built to perform — from landing pages to complex platforms with auth, dashboards, and APIs.',
     tags: ['React', 'Next.js', 'Laravel', 'Django', 'MySQL', 'MongoDB'],
-    from: '₹8,000',
-    turnaround: '1 – 4 weeks',
   },
   {
     number: '02',
     title: 'Mobile Development',
     description: 'Native Android apps with clean UI, offline support, and backend integration — built for real users on real devices.',
     tags: ['Kotlin', 'Android', 'Firebase', 'REST APIs', 'Media3'],
-    from: '₹12,000',
-    turnaround: '2 – 6 weeks',
   },
   {
     number: '03',
     title: 'AI Agent Building',
     description: 'Custom AI pipelines, chatbots, and intelligent automation workflows that save time and scale with your business.',
-    tags: ['OpenAI', 'LangChain', 'Python', 'RAG', 'API Integration'],
-    from: '₹10,000',
-    turnaround: '1 – 3 weeks',
+    tags: ['Claude API', 'OpenAI', 'LangChain', 'Python', 'RAG'],
   },
   {
     number: '04',
     title: 'Software Solutions',
     description: 'Scripts, tools, embedded firmware, automation, or any custom software — if it can be built, I can build it.',
     tags: ['Python', 'C/C++', 'Arduino', 'ESP32', 'Automation'],
-    from: 'Custom quote',
-    turnaround: 'Depends on scope',
   },
 ]
 
@@ -146,27 +138,20 @@ export default function Services() {
                 ))}
               </div>
 
-              {/* Footer row */}
-              <div style={{
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-                marginTop: 'auto',
-                paddingTop: '20px',
-                borderTop: '1px solid #ebebeb',
-                flexWrap: 'wrap',
-                gap: '12px',
-              }}>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                  <span style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#b0b0b0' }}>Starting from</span>
-                  <span style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '1.4rem', fontWeight: 600, color: '#1a1a1a', letterSpacing: '-0.01em' }}>
-                    {service.from}
-                  </span>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', textAlign: 'right' }}>
-                  <span style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#b0b0b0' }}>Turnaround</span>
-                  <span style={{ fontSize: '0.85rem', fontWeight: 500, color: '#555' }}>{service.turnaround}</span>
-                </div>
+              {/* Footer CTA */}
+              <div style={{ marginTop: 'auto', paddingTop: '20px', borderTop: '1px solid #ebebeb' }}>
+                <a
+                  href="#contact"
+                  style={{
+                    fontSize: '0.78rem', fontWeight: 500, color: '#888',
+                    letterSpacing: '0.05em', display: 'inline-flex', alignItems: 'center',
+                    gap: '6px', transition: 'color 0.2s',
+                  }}
+                  onMouseEnter={e => (e.currentTarget.style.color = '#c9a96e')}
+                  onMouseLeave={e => (e.currentTarget.style.color = '#888')}
+                >
+                  Get a custom quote ↗
+                </a>
               </div>
             </motion.div>
           ))}
