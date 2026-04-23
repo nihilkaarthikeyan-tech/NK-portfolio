@@ -138,9 +138,29 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               )}
             </div>
             {project.link !== '#' && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.75rem', color: '#b0b0b0', transition: 'color 0.2s', position: 'relative', zIndex: 10 }}
-                onMouseEnter={e => (e.currentTarget.style.color = '#1a1a1a')}
-                onMouseLeave={e => (e.currentTarget.style.color = '#b0b0b0')}
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  width: '32px', height: '32px', borderRadius: '50%',
+                  display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+                  fontSize: '0.95rem', color: '#c9a96e',
+                  border: '1px solid rgba(201,169,110,0.45)',
+                  background: 'rgba(201,169,110,0.07)',
+                  transition: 'all 0.2s', position: 'relative', zIndex: 10,
+                  flexShrink: 0,
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = '#c9a96e'
+                  e.currentTarget.style.color = '#ffffff'
+                  e.currentTarget.style.borderColor = '#c9a96e'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'rgba(201,169,110,0.07)'
+                  e.currentTarget.style.color = '#c9a96e'
+                  e.currentTarget.style.borderColor = 'rgba(201,169,110,0.45)'
+                }}
               >↗</a>
             )}
           </div>
