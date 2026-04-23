@@ -11,8 +11,8 @@ const TYPE_LABELS: Record<string, string> = {
 }
 
 const timelineItems = [
-  ...education.map(e => ({ type: 'Education', title: e.degree, subtitle: e.institution, date: e.period, desc: e.description })),
-  ...experience.map(e => ({ type: e.type, title: e.type === 'Internship' ? e.company : e.description, subtitle: e.company, date: e.date, desc: e.description }))
+  ...education.map(e => ({ type: 'Education', title: e.degree, subtitle: e.institution, date: e.period, desc: e.description, highlight: false })),
+  ...experience.map(e => ({ type: e.type, title: (e as any).title || (e.type === 'Internship' ? e.company : e.description), subtitle: e.company, date: e.date, desc: e.description, highlight: e.type === 'Achievement' }))
 ]
 
 export default function Timeline() {
@@ -103,16 +103,27 @@ export default function Timeline() {
                 </span>
               </div>
               
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', background: '#ffffff', padding: '32px', borderRadius: '16px', border: '1px solid #ebebeb', boxShadow: '0 4px 20px rgba(0,0,0,0.02)' }}>
-                 <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.25rem', fontWeight: 600, color: '#1a1a1a', letterSpacing: '-0.01em' }}>
-                    {item.title}
-                 </h3>
-                 <p style={{ fontSize: '0.9rem', fontWeight: 500, color: '#555' }}>
-                   {item.subtitle}
-                 </p>
-                 <p style={{ fontSize: '0.85rem', color: '#888', lineHeight: 1.6, marginTop: '8px', maxWidth: '600px' }}>
-                   {item.desc}
-                 </p>
+              <div style={{
+                display: 'flex', flexDirection: 'column', gap: '8px',
+                background: '#ffffff', padding: '32px', borderRadius: '16px',
+                border: item.highlight ? '1px solid rgba(201,169,110,0.4)' : '1px solid #ebebeb',
+                borderLeft: item.highlight ? '3px solid #c9a96e' : '1px solid #ebebeb',
+                boxShadow: item.highlight ? '0 4px 20px rgba(201,169,110,0.08)' : '0 4px 20px rgba(0,0,0,0.02)',
+              }}>
+                {item.highlight && (
+                  <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#c9a96e' }}>
+                    Patent Pending
+                  </span>
+                )}
+                <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.25rem', fontWeight: 600, color: '#1a1a1a', letterSpacing: '-0.01em' }}>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '0.9rem', fontWeight: 500, color: '#555' }}>
+                  {item.subtitle}
+                </p>
+                <p style={{ fontSize: '0.85rem', color: '#888', lineHeight: 1.6, marginTop: '8px', maxWidth: '600px' }}>
+                  {item.desc}
+                </p>
               </div>
             </motion.div>
           ))}

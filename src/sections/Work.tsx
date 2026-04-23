@@ -109,16 +109,22 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         {/* Card Content floated slightly on Z-axis for deeper 3D feel */}
         <div style={{ transform: 'translateZ(20px)', display: 'flex', flexDirection: 'column', gap: '16px', height: '100%', pointerEvents: 'auto' }}>
           
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <span style={{
-              fontSize: '0.68rem',
-              fontWeight: 600,
-              textTransform: 'uppercase',
-              letterSpacing: '0.12em',
-              color: '#b0b0b0',
-            }}>
-              {project.type}
-            </span>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+              <span style={{ fontSize: '0.68rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#b0b0b0' }}>
+                {project.type}
+              </span>
+              {project.patent && (
+                <span style={{
+                  fontSize: '0.6rem', fontWeight: 600, letterSpacing: '0.1em',
+                  textTransform: 'uppercase', color: '#c9a96e',
+                  border: '1px solid rgba(201,169,110,0.5)',
+                  padding: '2px 7px', borderRadius: '4px',
+                }}>
+                  Patent Pending
+                </span>
+              )}
+            </div>
             {project.link !== '#' && (
               <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.75rem', color: '#b0b0b0', transition: 'color 0.2s', position: 'relative', zIndex: 10 }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#1a1a1a')}

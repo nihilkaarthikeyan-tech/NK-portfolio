@@ -21,6 +21,13 @@ export const education = [
 
 export const experience = [
   {
+    type: "Achievement",
+    title: "Patent Application Filed",
+    company: "Indian Patent Office — Chennai",
+    date: "April 2026",
+    description: "Filed patent for 'Portable Non-Contact Tonometer for Home Based IOP Monitoring'. Application No: 202641049157 | Ref: TEMP/E-1/54082/2026-CHE. Early publication requested via Form 9."
+  },
+  {
     type: "Internship",
     company: "MindBox LLC",
     date: "June 2025",

@@ -9,6 +9,7 @@ export interface Project {
   tags: string[]
   link: string
   type: ProjectType
+  patent?: string
 }
 
 export const projects: Project[] = [
@@ -21,6 +22,7 @@ export const projects: Project[] = [
     tags: ['ESP32', 'Embedded C', 'TOF Sensor', 'Bluetooth', 'Fusion 360', 'Arduino IDE', '3D Printing'],
     link: '#',
     type: 'hardware',
+    patent: '202641049157',
   },
   {
     title: 'AI Lead Generator',

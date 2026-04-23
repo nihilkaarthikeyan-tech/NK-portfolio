@@ -8,15 +8,15 @@ gsap.registerPlugin(ScrollTrigger)
 
 const STATS = [
   { value: '8.0', label: 'CGPA' },
-  { value: '7+', label: 'Projects' },
-  { value: '4', label: 'Certifications' },
+  { value: '8+', label: 'Projects' },
+  { value: '1', label: 'Patent Filed' },
   { value: '2026', label: 'Graduate' },
 ]
 
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null)
 
-  const text = "I'm a passionate B.E Mechatronics Engineering student at SNS College of Technology. I build at the intersection of software, AI, and hardware — from line-following robots to full-stack web applications. I believe great engineering is about solving real problems with clarity and craft."
+  const text = "I'm a passionate B.E Mechatronics Engineering student at SNS College of Technology. I build at the intersection of software, AI, and hardware — from a patented non-contact tonometer to full-stack web applications and AI agents. I believe great engineering is about solving real problems with clarity and craft."
 
   useGSAP(() => {
     const words = sectionRef.current?.querySelectorAll('.word')
