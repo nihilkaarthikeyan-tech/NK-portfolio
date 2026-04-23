@@ -124,6 +124,18 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                   Patent Pending
                 </span>
               )}
+              {project.status === 'in-progress' && (
+                <span style={{
+                  fontSize: '0.6rem', fontWeight: 600, letterSpacing: '0.1em',
+                  textTransform: 'uppercase', color: '#22c55e',
+                  border: '1px solid rgba(34,197,94,0.4)',
+                  padding: '2px 7px', borderRadius: '4px',
+                  display: 'inline-flex', alignItems: 'center', gap: '4px',
+                }}>
+                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#22c55e', display: 'inline-block' }} />
+                  In Progress
+                </span>
+              )}
             </div>
             {project.link !== '#' && (
               <a href={project.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: '0.75rem', color: '#b0b0b0', transition: 'color 0.2s', position: 'relative', zIndex: 10 }}

@@ -16,6 +16,7 @@ import Footer from './components/Footer'
 import Cursor from './components/Cursor'
 import Marquee from './components/Marquee'
 import Services from './sections/Services'
+import Currently from './components/Currently'
 import NotFound from './pages/NotFound'
 
 function ScrollProgress() {
@@ -94,6 +95,7 @@ function Portfolio() {
         <NavBar />
         <main>
           <Hero />
+          <Currently />
           <Marquee />
           <About />
           <Work />

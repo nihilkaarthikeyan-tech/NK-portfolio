@@ -10,9 +10,32 @@ export interface Project {
   link: string
   type: ProjectType
   patent?: string
+  status?: 'completed' | 'in-progress'
 }
 
 export const projects: Project[] = [
+  {
+    title: 'GATE AI Study Assistant',
+    tagline: '11-module AI prep platform with RAG grounding and numerical verification',
+    problem: 'GATE demands multi-paper support, MCQ + MSQ + NAT question types, and mathematically verified answers — standard LLMs hallucinate on numericals.',
+    solution: 'Built on the NEET architecture with 3 key upgrades: pgvector RAG for syllabus-grounded answers, a Python SymPy sidecar to verify numerical results, and smart model routing (Haiku → Sonnet → Opus) that cuts AI costs by 60–70%.',
+    impact: '11 modules covering study planning, mock tests, PYQ vault, photo doubt solver, rank predictor, and post-GATE PSU/M.Tech guidance. Expandable to CS, EC, ME, EE, CE papers.',
+    tags: ['React', 'Node.js', 'TypeScript', 'Claude API', 'pgvector', 'FastAPI', 'SymPy', 'Redis'],
+    link: '#',
+    type: 'ai',
+    status: 'in-progress',
+  },
+  {
+    title: 'NEET AI Study Assistant',
+    tagline: '9-module AI study platform for NEET medical entrance exam prep',
+    problem: 'Students preparing for NEET lack a personalized, all-in-one system — they juggle multiple apps for planning, doubt-solving, and mock tests.',
+    solution: 'Full-stack web app with 9 AI modules: smart study planner, 24/7 AI tutor, NEET-pattern mock test generator, photo doubt solver (upload any question image), weak area analyzer, and performance dashboard.',
+    impact: 'Complete NEET prep platform across Physics, Chemistry & Biology. Powered by Claude Sonnet for 8 modules and GPT-4o Vision for image-based doubts.',
+    tags: ['React', 'Node.js', 'Claude API', 'GPT-4o Vision', 'PostgreSQL', 'Supabase', 'Redis'],
+    link: '#',
+    type: 'ai',
+    status: 'completed',
+  },
   {
     title: 'Portable Non-Contact Tonometer',
     tagline: 'Home-based IOP monitoring device for glaucoma — final year project',
