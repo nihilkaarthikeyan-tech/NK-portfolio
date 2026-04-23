@@ -37,6 +37,16 @@ export const projects: Project[] = [
     status: 'completed',
   },
   {
+    title: 'Movie App',
+    tagline: 'Real-time movie browsing app with search, filtering, and details view',
+    problem: 'Needed a hands-on full-stack React project demonstrating API integration, state management, and responsive UI design.',
+    solution: 'Built a responsive movie browsing app using React + OMDB API. Fetches real-time movie data including posters, ratings, and descriptions. Dynamic search and filtering powered by React Hooks.',
+    impact: 'Demonstrates end-to-end React skills — REST API integration, authentication, CRUD operations, and responsive design.',
+    tags: ['React.js', 'REST API', 'OMDB API', 'React Hooks', 'Authentication', 'CRUD'],
+    link: '#',
+    type: 'web',
+  },
+  {
     title: 'Portable Non-Contact Tonometer',
     tagline: 'Home-based IOP monitoring device for glaucoma — final year project',
     problem: 'Glaucoma affects 80M+ people worldwide yet IOP fluctuates throughout the day, peaking outside clinic hours. Clinical tonometers cost ₹3.5–15 Lakh, require anesthesia, corneal contact, and trained personnel — making continuous monitoring impossible for most patients.',
