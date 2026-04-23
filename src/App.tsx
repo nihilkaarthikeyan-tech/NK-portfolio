@@ -15,6 +15,7 @@ import Loader from './components/Loader'
 import Footer from './components/Footer'
 import Cursor from './components/Cursor'
 import Marquee from './components/Marquee'
+import Services from './sections/Services'
 import NotFound from './pages/NotFound'
 
 function ScrollProgress() {
@@ -99,6 +100,7 @@ function Portfolio() {
           <HowIThink />
           <Skills />
           <Timeline />
+          <Services />
           <Contact />
         </main>
         <Footer />

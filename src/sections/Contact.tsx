@@ -95,7 +95,7 @@ export default function Contact() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           style={{ marginBottom: '56px' }}
         >
-          <p className="chapter-label" style={{ marginBottom: '16px' }}>06 — Contact</p>
+          <p className="chapter-label" style={{ marginBottom: '16px' }}>07 — Contact</p>
           <h2 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, letterSpacing: '-0.03em', color: '#1a1a1a', lineHeight: 1.1 }}>
             Let's talk.
           </h2>
