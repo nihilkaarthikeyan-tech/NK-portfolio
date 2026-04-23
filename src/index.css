@@ -243,6 +243,12 @@ img { display: block; max-width: 100%; }
   #contact > div > div:last-child {
     grid-template-columns: 1fr !important;
   }
+  .contact-name-row {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-watermark {
+    display: none;
+  }
 }
 
 /* ─── Grain shift animation ─── */

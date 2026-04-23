@@ -145,7 +145,7 @@ export default function Hero() {
       }}
     >
       {/* Ghost watermark — large faint initials */}
-      <div style={{
+      <div className="hero-watermark" style={{
         position: 'absolute',
         right: '-4%',
         top: '50%',

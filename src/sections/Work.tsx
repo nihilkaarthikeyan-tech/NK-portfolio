@@ -239,7 +239,7 @@ export default function Work() {
           </div>
         </motion.div>
 
-        <motion.div layout style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '20px' }}>
+        <motion.div layout style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: '20px' }}>
           <AnimatePresence mode="popLayout">
             {filtered.map((project, i) => (
               <motion.div
