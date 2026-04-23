@@ -3,16 +3,22 @@ import { motion, useScroll } from 'framer-motion'
 import { education, experience } from '../data/education'
 
 const TYPE_LABELS: Record<string, string> = {
-  Education:  'EDU',
-  Internship: 'EXP',
-  Workshop:   'WRK',
-  Achievement:'ACH',
-  Volunteer:  'VOL',
+  Education:   'EDU',
+  Internship:  'EXP',
+  Workshop:    'WRK',
+  Achievement: 'ACH',
+  Publication: 'PUB',
+  Volunteer:   'VOL',
+}
+
+const HIGHLIGHT_LABEL: Record<string, string> = {
+  Achievement: 'Patent Pending',
+  Publication: 'Under Review',
 }
 
 const timelineItems = [
   ...education.map(e => ({ type: 'Education', title: e.degree, subtitle: e.institution, date: e.period, desc: e.description, highlight: false })),
-  ...experience.map(e => ({ type: e.type, title: (e as any).title || (e.type === 'Internship' ? e.company : e.description), subtitle: e.company, date: e.date, desc: e.description, highlight: e.type === 'Achievement' }))
+  ...experience.map(e => ({ type: e.type, title: (e as any).title || (e.type === 'Internship' ? e.company : e.description), subtitle: e.company, date: e.date, desc: e.description, highlight: e.type === 'Achievement' || e.type === 'Publication' }))
 ]
 
 export default function Timeline() {
@@ -110,9 +116,9 @@ export default function Timeline() {
                 borderLeft: item.highlight ? '3px solid #c9a96e' : '1px solid #ebebeb',
                 boxShadow: item.highlight ? '0 4px 20px rgba(201,169,110,0.08)' : '0 4px 20px rgba(0,0,0,0.02)',
               }}>
-                {item.highlight && (
+                {item.highlight && HIGHLIGHT_LABEL[item.type] && (
                   <span style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.15em', textTransform: 'uppercase', color: '#c9a96e' }}>
-                    Patent Pending
+                    {HIGHLIGHT_LABEL[item.type]}
                   </span>
                 )}
                 <h3 style={{ fontFamily: 'Space Grotesk, sans-serif', fontSize: '1.25rem', fontWeight: 600, color: '#1a1a1a', letterSpacing: '-0.01em' }}>

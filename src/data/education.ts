@@ -28,6 +28,13 @@ export const experience = [
     description: "Filed patent for 'Portable Non-Contact Tonometer for Home Based IOP Monitoring'. Application No: 202641049157 | Ref: TEMP/E-1/54082/2026-CHE. Early publication requested via Form 9."
   },
   {
+    type: "Publication",
+    title: "Research Paper Submitted — ICAMEC 2025",
+    company: "International Conference on Advanced Mechatronics Engineering & Computing",
+    date: "August 2025",
+    description: "Submitted research paper 'Development of a Portable, Non-Contact, Cost-Effective Intraocular Pressure (IOP) Monitoring Device for Elderly People'. Track: Robotics and Mechatronics Systems | Paper ID: 92 | Status: Under Review."
+  },
+  {
     type: "Internship",
     title: "Web Developer Intern",
     company: "Zidio Development (Remote)",
