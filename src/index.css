@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────
+   MINIMALIST LIGHT DESIGN SYSTEM
+   ───────────────────────────────────────── */
+:root {
+  --bg:           #ffffff;
+  --bg-warm:      #faf9f7;
+  --bg-subtle:    #f5f4f1;
+  --surface:      #ffffff;
+  --border:       #ebebeb;
+  --border-hover: #d4d4d4;
+  --accent:       #2d2d2d;
+  --accent-soft:  #5a5a5a;
+  --text:         #1a1a1a;
+  --text-2:       #555555;
+  --text-3:       #888888;
+  --text-4:       #b0b0b0;
+  --link:         #1a1a1a;
+  --highlight:    #e8e4df;
+  --gold:         #c9a96e;
+  --serif:        'Cormorant Garamond', Georgia, serif;
+  --radius:       12px;
+  --radius-lg:    20px;
+  --shadow-sm:    0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:    0 4px 20px rgba(0,0,0,0.06);
+  --shadow-lg:    0 12px 40px rgba(0,0,0,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  line-height: 1.15;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+a { text-decoration: none; color: inherit; }
+button { cursor: pointer; border: none; background: none; font: inherit; }
+img { display: block; max-width: 100%; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(201,169,110,0.35); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+
+::selection { background: rgba(201,169,110,0.12); }
+
+/* ─── Scroll progress ─── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1px;
+  background: var(--gold);
+  z-index: 9998;
+  transform-origin: left;
+}
+
+/* ─── Section chapter labels ─── */
+.chapter-label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-4);
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ─── Nav link underline animation ─── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--text);
+  transition: width 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.nav-link:hover {
+  color: var(--text) !important;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ─── Buttons ─── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 28px;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  background: var(--text);
+  color: #fff;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+}
+.btn-primary:hover {
+  background: #333;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 26px;
+  border-radius: 100px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
+}
+.btn-ghost:hover {
+  border-color: var(--text);
+  transform: translateY(-1px);
+}
+
+/* ─── Keyframes ─── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 0.8; }
+}
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0.5); }
+  60%      { box-shadow: 0 0 0 5px rgba(34,197,94,0); }
+}
+
+.animate-fade-in-up { animation: fadeInUp 0.7s ease forwards; }
+.animate-fade-in    { animation: fadeIn 0.5s ease forwards; }
+.animate-float      { animation: float 6s ease-in-out infinite; }
+.animate-blink      { animation: blink 1.1s step-end infinite; }
+.status-dot         { animation: pulse-dot 2.5s ease-in-out infinite; }
+
+/* ─── Reveal on scroll ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Divider ─── */
+.section-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ─── Marquee ─── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 28s linear infinite;
+  white-space: nowrap;
+  will-change: transform;
+}
+.marquee-track:hover { animation-play-state: paused; }
+
+/* ─── Hero responsive grid ─── */
+.hero-grid {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 60px;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ─── Contact grid responsive ─── */
+@media (max-width: 768px) {
+  #contact > div > div:last-child {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─── Grain shift animation ─── */
+@keyframes grain-shift {
+  0%,100% { transform: translate(0,0) }
+  10%     { transform: translate(-5%,-5%) }
+  20%     { transform: translate(-10%,5%) }
+  30%     { transform: translate(5%,-10%) }
+  40%     { transform: translate(-5%,15%) }
+  50%     { transform: translate(-10%,5%) }
+  60%     { transform: translate(15%,0%) }
+  70%     { transform: translate(0%,10%) }
+  80%     { transform: translate(-15%,0%) }
+  90%     { transform: translate(10%,5%) }
+}
