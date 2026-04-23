@@ -46,22 +46,4 @@ export const experience = [
     date: "June 2024",
     description: "Gained hands-on experience in gear manufacturing and quality inspection processes, understanding industrial production standards and quality control measures."
   },
-  {
-    type: "Industrial Visit",
-    company: "Alpha Automation Controls",
-    date: "Dec 2024",
-    description: "PCB Controls and Automation"
-  },
-  {
-    type: "Industrial Visit",
-    company: "The Research Design Lab",
-    date: "Nov 2024",
-    description: "Embedded systems, PCB printing and assembly"
-  },
-  {
-    type: "Industrial Visit",
-    company: "Electronic Manufacturing",
-    date: "Dec 2023",
-    description: "Emergency lights, Rechargeable ports"
-  }
 ];
