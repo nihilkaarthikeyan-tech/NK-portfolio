@@ -68,14 +68,24 @@ export default function NavBar() {
           ))}
         </div>
 
-        {/* CTA */}
-        <a
-          href="#contact"
-          className="hidden md:inline-flex btn-primary"
-          style={{ padding: '8px 20px', fontSize: '0.8rem', borderRadius: '100px' }}
-        >
-          Get in touch
-        </a>
+        {/* Resume + CTA */}
+        <div className="hidden md:flex" style={{ alignItems: 'center', gap: '20px' }}>
+          <a
+            href="/resume.pdf"
+            download
+            className="nav-link"
+            style={{ fontSize: '0.82rem', fontWeight: 500, color: '#888', letterSpacing: '0.01em', display: 'flex', alignItems: 'center', gap: '4px' }}
+          >
+            Resume ↓
+          </a>
+          <a
+            href="#contact"
+            className="btn-primary"
+            style={{ padding: '8px 20px', fontSize: '0.8rem', borderRadius: '100px' }}
+          >
+            Get in touch
+          </a>
+        </div>
 
         {/* Mobile hamburger */}
         <button
@@ -112,6 +122,14 @@ export default function NavBar() {
               {link.label}
             </a>
           ))}
+          <a
+            href="/resume.pdf"
+            download
+            style={{ fontSize: '0.9rem', color: '#c9a96e', fontWeight: 500 }}
+            onClick={() => setMenuOpen(false)}
+          >
+            Resume ↓
+          </a>
           <a
             href="#contact"
             className="btn-primary"

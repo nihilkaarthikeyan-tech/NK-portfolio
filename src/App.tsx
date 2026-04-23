@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Lenis from 'lenis'
+import { Analytics } from '@vercel/analytics/react'
 
 import Hero from './sections/Hero'
 import About from './sections/About'
@@ -13,6 +15,7 @@ import Loader from './components/Loader'
 import Footer from './components/Footer'
 import Cursor from './components/Cursor'
 import Marquee from './components/Marquee'
+import NotFound from './pages/NotFound'
 
 function ScrollProgress() {
   const barRef = useRef<HTMLDivElement>(null)
@@ -56,7 +59,7 @@ function GrainOverlay() {
   )
 }
 
-function App() {
+function Portfolio() {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
@@ -100,6 +103,18 @@ function App() {
         </main>
         <Footer />
       </div>
+    </>
+  )
+}
+
+function App() {
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Analytics />
     </>
   )
 }

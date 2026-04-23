@@ -2,6 +2,13 @@ import { useState, type MouseEvent } from 'react'
 import { projects, type Project, type ProjectType } from '../data/projects'
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion'
 
+const TYPE_COLORS: Record<ProjectType, string> = {
+  ai:       '#6366f1',
+  web:      '#10b981',
+  hardware: '#c9a96e',
+  mobile:   '#8b5cf6',
+}
+
 const FILTERS: { label: string; value: 'all' | ProjectType }[] = [
   { label: 'All', value: 'all' },
   { label: 'AI', value: 'ai' },
@@ -54,6 +61,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           position: 'relative',
           overflow: 'hidden',
           border: '1px solid #ebebeb',
+          borderTop: `2px solid ${TYPE_COLORS[project.type]}`,
           boxShadow: '0 4px 20px rgba(0,0,0,0.02)',
         }}
         onMouseMove={handleMouseMove}
