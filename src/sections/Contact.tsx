@@ -2,9 +2,9 @@ import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
 
-const EMAILJS_SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  as string
-const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID as string
-const EMAILJS_PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  as string
+const EMAILJS_SERVICE_ID  = 'service_2otuxsl'
+const EMAILJS_TEMPLATE_ID = 'template_hudgfpy'
+const EMAILJS_PUBLIC_KEY  = 'SW8z1CTGUNveuU4NQ'
 
 const INFO = [
   {
